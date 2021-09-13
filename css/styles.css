@@ -1,0 +1,365 @@
+:root {
+  --primary-color: #fb2056;
+  /* --secondary-color: #8cc7a1;
+  /* --third-color: #816e94;
+  --dark-color: #333; */
+  /* --light-color: #bebebe; */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Universal Styles */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0.25rem 0.25rem;
+}
+
+h3 {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #f8f8ff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  padding: 0rem 0.25rem;
+}
+
+img {
+  width: 100%;
+}
+
+/* Buttons Styles */
+
+.btn {
+  padding: 0.75rem 1.75rem;
+  display: inline-block;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.faded-text {
+  opacity: 0.5;
+}
+/* Navigation */
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#navbar nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbar nav ul li {
+  margin-right: 0.25rem;
+  padding: 0.75rem;
+}
+
+#navbar nav ul li a {
+  font-size: 1.2rem;
+}
+
+.logo p {
+  padding: 0;
+  margin: 0;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+/* Header */
+
+.hero {
+  background: url(../img/header-img.jpg) no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  /* This is positioned relative because of the overlay. The overlay is positioned absolute, meaning the parent container (this) needs to be positioned relative.  */
+}
+
+header .header-container {
+  height: 100vh;
+  /* parent element of content. Allows us to center .content text on page */
+}
+
+header .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80%;
+  color: #fff;
+}
+
+header .content h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  margin: 0.25rem 0 1rem;
+  letter-spacing: 4px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  /* Image overlay */
+}
+
+.hero * {
+  z-index: 10;
+  /* Brings all .hero content in front of the overlay */
+}
+
+/* About Section */
+#about {
+  background: var(--primary-color);
+  height: 40vh;
+  color: #fff;
+}
+
+#about .about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#about .about-container > h1 {
+  font-size: 1.6rem;
+  border-bottom: 2px solid #fff;
+}
+
+#about .about-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#about .about-icons h2 {
+  font-weight: 400;
+}
+
+#about .about-icons .about-icon-item {
+  margin: 0 2rem;
+}
+
+/* Event Section */
+
+.events-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.event-item-1,
+.event-item-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-item-img {
+  max-width: 400px;
+}
+
+.event-item-img img {
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.events-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.events-heading h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2.75rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+#events .events-item .btn {
+  margin-top: 1.2rem;
+}
+
+
+/* Tours Section */
+
+#tours {
+  background: #f7f7f7;
+}
+
+#tours .tour-container {
+  margin: 2rem 0;
+  padding: 0.25rem 0;
+}
+#tours .tours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1rem;
+  height: 800px;
+}
+
+#tours img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#tours .tour-text {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  text-align: center;
+}
+
+#tours .tour-text h1 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+#tours .grid-item {
+  max-height: 300px;
+}
+
+#tours img {
+  border-radius: 0.25rem;
+}
+
+#footer {
+  background: #333;
+  color: #fff;
+  height: 110px;
+}
+
+#footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+  /* Navigation */
+
+  #navbar {
+    padding: 1rem;
+  }
+
+  /* Events */
+
+  #events .events-container,
+  #tours .tour-container {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Navigation */
+
+  #navbar {
+    flex-direction: column;
+  }
+
+  #navbar .logo {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  }
+
+  header .content {
+    padding: 0 0.25rem;
+    height: 60%;
+    /* aligns the content more in the center */
+  }
+
+  header .content h1 {
+    font-size: 2.7rem;
+  }
+
+  /* About Section */
+  #about {
+    height: 100vh;
+  }
+
+  #about .about-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Events Section */
+  .events-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #events .events-item .event-item-1 {
+    margin-bottom: 0.75rem;
+    /* add space below events-item-1 btn */
+  }
+
+  /* Tours Section */
+  #tours .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: 100%;
+  }
+}
