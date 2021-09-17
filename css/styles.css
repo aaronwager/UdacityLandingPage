@@ -83,18 +83,18 @@ img {
   text-align: center;
 }
 
-#navbar nav ul {
+#navbar nav #nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#navbar nav ul li {
+#navbar nav #nav-list .nav-item {
   margin-right: 0.25rem;
   padding: 0.75rem;
 }
 
-#navbar nav ul li a {
+#navbar nav ul .nav-links {
   font-size: 1.2rem;
 }
 
@@ -103,6 +103,10 @@ img {
   margin: 0;
   font-size: 1.7rem;
   color: #fff;
+}
+
+.active {
+  border-bottom: 2px solid var(--primary-color);
 }
 
 /* Header */
@@ -119,7 +123,7 @@ header .header-container {
   /* parent element of content. Allows us to center .content text on page */
 }
 
-header .content {
+header #home {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +233,6 @@ header .content h1 {
 #events .events-item .btn {
   margin-top: 1.2rem;
 }
-
 
 /* Tours Section */
 
